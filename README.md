@@ -1,76 +1,125 @@
 # Virtual Assistant
 
-A simple **Virtual Assistant** built with Python that uses Natural Language Processing (NLP) to understand user queries, generate responses, speak them aloud, and log them into a SQLite database.
+A lightweight Python virtual assistant that uses natural language processing (NLP) to interpret user input, generate a response, speak it aloud, and save the response to a SQLite database.
 
----
+## ✨ Features
 
-## 🚀 Features
-- **NLP Processing**: Tokenization, lemmatization, intent detection, and entity extraction using NLTK.
-- **Voice Output**: Text-to-speech responses powered by `pyttsx3`.
-- **Database Logging**: Responses are stored in a local SQLite database.
-- **Configurable**: Intents, entities, and training data are defined in JSON/CSV files for easy customization.
+- **Natural language processing** with NLTK for tokenization, lemmatization, intent detection, and entity extraction.
+- **Text-to-speech responses** powered by [`pyttsx3`](https://pypi.org/project/pyttsx3/).
+- **Response logging** using SQLite.
+- **Data-driven configuration** through JSON and CSV files.
+- **Machine-learning support** through scikit-learn.
 
----
+## 🗂️ Project Structure
 
-## 📂 Project Structure
-Virtual Assistant
-|-- src
-|   |-- main.py              # Entry point
-|   |-- nlp.py               # NLP utility class
-|   |-- voice_assistant.py   # Voice assistant logic
-|   |-- utils.py             # Database utilities
-|-- data
-|   |-- intents.json         # Intent definitions
-|   |-- entities.json        # Entity definitions
-|   |-- training_data.csv    # Training samples
-|-- config
-|   |-- configuration.json   # Config settings
-|-- database.db              # SQLite database
-|-- requirements.txt         # Dependencies
+```text
+Virtual-Assistant-project/
+├── src/
+│   ├── main.py              # Application entry point
+│   ├── nlp.py               # NLP processing utilities
+│   ├── voice_assistant.py   # Assistant response and speech logic
+│   └── utils.py             # Database and utility functions
+├── data/
+│   ├── intents.json         # Intent definitions
+│   ├── entities.json        # Entity definitions
+│   └── training_data.csv    # Training examples
+├── config/
+│   └── configuration.json   # Application settings
+├── requirements.txt         # Python dependencies
+└── database.db              # Local SQLite database, created or updated at runtime
+```
 
----
+## ✅ Requirements
 
-## ⚙️ Requirements
-- Python 3.11+
-- [NLTK](https://www.nltk.org/)
-- [pyttsx3](https://pypi.org/project/pyttsx3/)
-- scikit-learn
-- pandas
+- Python 3.11 or newer
+- The dependencies listed in `requirements.txt`
+- An audio output device for text-to-speech features
 
-Install dependencies:
+## 🚀 Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Shsha3245/Virtual-Assistant-project.git
+   cd Virtual-Assistant-project
+   ```
+
+2. Create and activate a virtual environment:
+
+   ```bash
+   python -m venv .venv
+   ```
+
+   **Windows PowerShell:**
+
+   ```powershell
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+   **macOS/Linux:**
+
+   ```bash
+   source .venv/bin/activate
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   python -m pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+## ▶️ Usage
+
+Run the assistant from the project root:
+
 ```bash
-pip install -r requirements.txt
-Usage
-Run the assistant:
-
-bash
 python src/main.py
+```
+
 Example interaction:
 
-Kod
+```text
 User: hi
 Assistant: Hello! How can I help you?
-To exit, type:
+```
 
-Kod
-User: exit
-🛠 Configuration
-Edit config/configuration.json to adjust API keys, database URL, or voice assistant endpoint:
+The assistant processes one input, prints the response, speaks it using `pyttsx3`, and saves the response to the database.
 
-json
+> **Note:** Depending on your operating system, `pyttsx3` may require an additional speech engine or system audio package.
+
+## ⚙️ Configuration
+
+Application settings are stored in `config/configuration.json`:
+
+```json
 {
-  "api_key": "dummy-key",
+  "api_key": "dummy-key-123",
   "database_url": "sqlite:///database.db",
   "voice_assistant_url": "http://localhost:5000/api"
 }
-📈 Future Improvements
-Add more intents and entities (weather, jokes, time).
+```
 
-Continuous conversation loop until user exits.
+Update these values as needed for your local setup. Do not commit real API keys or other secrets to the repository.
 
-Advanced intent classification with ML models.
+## 🧪 Development Ideas
 
-Voice customization (different voices, speed, tone).
+- Add more intents and entities, such as weather, jokes, and time.
+- Support continuous conversations until the user exits.
+- Improve intent classification with trained machine-learning models.
+- Add configurable voices, speech rates, and volume.
+- Add automated tests for NLP processing, responses, and database logging.
 
-🤝 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. Create a feature branch.
+2. Make and test your changes.
+3. Open a pull request with a clear description of the change.
+
+For larger changes, please open an issue first to discuss the proposal.
+
+## 📄 License
+
+No license has been specified for this project yet. Add a `LICENSE` file if you want others to use, modify, or distribute the project under defined terms.
