@@ -1,0 +1,10 @@
+{
+    "greeting": {
+        "utterances": ["hello", "hi", "hey"],
+        "response": "Hello! How can I help you?"
+    },
+    "goodbye": {
+        "utterances": ["bye", "see you later", "later"],
+        "response": "Goodbye! Have a great day!"
+    }
+}

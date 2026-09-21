@@ -1,0 +1,10 @@
+{
+    "name": {
+        "type": "string",
+        "optional": false
+    },
+    "location": {
+        "type": "string",
+        "optional": false
+    }
+}

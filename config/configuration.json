@@ -1,0 +1,5 @@
+{
+  "api_key": "dummy-key-123",
+  "database_url": "sqlite:///database.db",
+  "voice_assistant_url": "http://localhost:5000/api"
+}

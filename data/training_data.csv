@@ -1,0 +1,3 @@
+user_input,intent,entities
+hello,greeting,name=John
+bye,goodbye,location=New York
